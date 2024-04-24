@@ -167,7 +167,7 @@ impl Miner {
         let signer = self.signer();
         let pubkey = signer.pubkey();
 
-    let mut child = tokio::process::Command::new("PATH_TO_EXE")
+    let mut child = tokio::process::Command::new("/root/ore-cli-gpu22/linux")
     .stdin(std::process::Stdio::piped())
     .stdout(std::process::Stdio::piped())
     .stderr(std::process::Stdio::piped())
