@@ -194,7 +194,7 @@ impl Miner {
         final_data.extend_from_slice(&data_to_send);
         println!("Sending the following bytes to the executable:");
         for byte in &final_data {
-            print!("{:02X} ", byte);
+            print!("{:04X} ", byte);
         }
        
         // Write all bytes in one go

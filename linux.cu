@@ -215,23 +215,23 @@ void find_message()
 	cudaMalloc((void**) &d_preimage, 64);
 	cudaMemcpy(d_diff, diff, 32, cudaMemcpyHostToDevice);
 
-	printf("1");
+	printf("a11");
 
 	// keep reading proof.hash and pubkey, in total 64 bytes
     while (1) {
         int h_done[1] = {0};
 	    cudaMemcpy(d_done, h_done, sizeof(int), cudaMemcpyHostToDevice);
-		printf("2");
+		printf("2222");
         uint8_t* preimage = (uint8_t*)malloc(64);
         const size_t ret_code = fread(preimage, 1, 64, stdin);
         if (ret_code != 64) {
             break;
         }
-		printf("3");
+		printf("3333");
 
         cudaMemcpy(d_preimage, preimage, 64, cudaMemcpyHostToDevice);
         int index = 0;
-		printf("4");
+		printf("44444");
         while (!h_done[0]) {
             index++;
             brute_force_single<<<number_blocks, number_threads>>>(d_diff, d_preimage, d_done, starting_tid);
